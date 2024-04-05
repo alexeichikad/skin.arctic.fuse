@@ -47,7 +47,7 @@ msgstr "Сначала очистите cпотлайт категории"
 #: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
 msgctxt "#31005"
 msgid "Choose global spotlight"
-msgstr "Глобальный cпотлайт"
+msgstr "Выбрать глобальный cпотлайт"
 
 msgctxt "#31006"
 msgid "Location"
@@ -84,7 +84,7 @@ msgid ""
 "Use the hub window selector at the top of the screen to change which window "
 "is being customised."
 msgstr ""
-"Используйте селектор в верхней части экрана, чтобы выбрать, какая категория "
+"Используйте переключатель в верхней части экрана для выбора, какая категория "
 "будет настраиваться."
 
 #: /1080i/Includes_Shortcuts_Window.xml
@@ -1927,17 +1927,52 @@ msgctxt "#31369"
 msgid "Video file"
 msgstr "Видео файл"
 
+#: /1080i/Custom_1172_Dialog_SideMenu.xml
+msgctxt "#31370"
+msgid "Switch profile"
+msgstr "Сменить профиль"
+
 msgctxt "#31371"
 msgid "Sorted by"
 msgstr "Сортировка по"
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31372"
+msgid "Options tray"
+msgstr "Нижняя панель параметров"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31373"
+msgid "Stacked"
+msgstr "В стеке"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31374"
+msgid "Reset skin settings to defaults"
+msgstr "Сбросить настройки обложки к значениям по умолчанию"
 
 msgctxt "#31375"
 msgid "Install zip"
 msgstr "Установить из zip"
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31376"
+msgid "Reset discover search history"
+msgstr "Сбросить историю поиска"
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31377"
+msgid "Next window"
+msgstr "Следующее окно"
+
 msgctxt "#31378"
 msgid "Foreign"
 msgstr "Сторонние"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31379"
+msgid "Edit categories"
+msgstr "Редактирование категорий"
 
 msgctxt "#31380"
 msgid "Forecast"
@@ -1955,6 +1990,36 @@ msgctxt "#31383"
 msgid "Production"
 msgstr "Производство"
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31384"
+msgid "Tray labels"
+msgstr "Ярлыки в нижней панели"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31385"
+msgid "Secondary"
+msgstr "Вторичный"
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31386"
+msgid "Primary"
+msgstr "Первичный"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31387"
+msgid "Contextual"
+msgstr "Контекст"
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31388"
+msgid "Seed"
+msgstr ""
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31389"
+msgid "Parent widget"
+msgstr "Родительский виджет"
+
 msgctxt "#31390"
 msgid "Release Year"
 msgstr "Год выпуска"
@@ -1963,6 +2028,11 @@ msgstr "Год выпуска"
 msgctxt "#31391"
 msgid "Minimal"
 msgstr "Минимальный"
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31392"
+msgid "Explore Widgets"
+msgstr "Исследовать виджеты"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31393"
