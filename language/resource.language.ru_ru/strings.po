@@ -1993,7 +1993,7 @@ msgstr "Производство"
 #: /1080i/SkinSettings.xml
 msgctxt "#31384"
 msgid "Tray labels"
-msgstr "Ярлыки в нижней панели"
+msgstr "Надписи в нижней панели"
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31385"
