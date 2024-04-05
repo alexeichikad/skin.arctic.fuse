@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog" id="1170">
     <defaultcontrol>7000</defaultcontrol>
-    <onload>SetFocus(7021)</onload>
+    <onload condition="String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">SetFocus(7021)</onload>
+    <onload condition="!String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">SetFocus(8000,0,absolute)</onload>
     <include>Action_ButtonMenu_Onload</include>
-
+    <onunload>ClearProperty(Options.Menu.GUID,Home)</onunload>
+    <onunload>ClearProperty(Options.Menu.Header,Home)</onunload>
     <controls>
+
+        <include content="Object_Hidden_List" condition="$EXP[Exp_HomeMenu_DontHide]">
+            <param name="id">303</param>
+            <content>
+                <item>
+                    <label>$INFO[Window(Home).Property(Options.Menu.Header)]</label>
+                    <property name="guid">$INFO[Window(Home).Property(Options.Menu.GUID)]</property>
+                </item>
+            </content>
+        </include>
+        <include content="Object_Hidden_List" condition="Skin.String(Home.SideMenuCollapse,Topbar) + Window.IsVisible(Home)">
+            <param name="id">370</param>
+            <content>
+                <item>
+                    <label>$INFO[Window(Home).Property(Options.Menu.Header)]</label>
+                    <property name="guid">$INFO[Window(Home).Property(Options.Menu.GUID)]</property>
+                </item>
+            </content>
+        </include>
 
         <control type="group">
             <include>Dimension_DialogSideMenu</include>
             <include>Animation_Right_Delay</include>
             <include content="Dialog_Dim_Side">
                 <param name="slide_animation">false</param>
-                <!-- <param name="slide_condition">!Integer.IsEqual(Container(9000).NumItems,0)</param> -->
             </include>
-
-            <!-- Bottom Layer -->
-            <!-- <include content="Dialog_Background_Side">
-                <param name="slide_condition">!Integer.IsEqual(Container(9000).NumItems,0)</param>
-                <param name="dialog_size">Dimension_DialogSideMenu</param>
-                <include content="Dialog_Body">
-                    <include content="Dialog_Side_Grouplist">
-                        <param name="id">9000</param>
-                        <onleft>Close</onleft>
-                        <onright>7000</onright>
-                        <include>skinvariables-powersidemenu-staticitems</include>
-                    </include>
-                </include>
-            </include> -->
 
             <include content="Dialog_Foreground_Side">
                 <param name="dialog_size">Dimension_DialogSideMenu</param>
@@ -34,7 +40,11 @@
                 <param name="subline">false</param>
 
                 <!-- Header -->
-                <include content="Dialog_Head">
+                <include content="Dialog_Head" condition="!String.IsEmpty(Window(Home).Property(Options.Menu.Header))">
+                    <param name="label">$LOCALIZE[33063]</param>
+                    <!-- <param name="label">$INFO[Window(Home).Property(Options.Menu.Header)]</param> -->
+                </include>
+                <include content="Dialog_Head" condition="String.IsEmpty(Window(Home).Property(Options.Menu.Header))">
                     <param name="label">$LOCALIZE[33063]</param>
                 </include>
                 <include>Dialog_Head_CloseButton</include>
@@ -61,22 +71,51 @@
                             <right>20</right>
                             <height>1</height>
                             <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+                            <!-- <visible>String.IsEmpty(Window(Home).Property(Options.Menu.GUID))</visible> -->
                         </control>
 
-                        <include content="Object_Control">
-                            <param name="control">grouplist</param>
+                        <include content="List_DialogSelect" condition="String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">
                             <param name="id">8000</param>
+                            <param name="itemlayout_include">Layout_MenuList</param>
                             <top>320</top>
                             <bottom>80</bottom>
                             <orientation>vertical</orientation>
                             <onup>7020</onup>
-                            <ondown>6000</ondown>
+                            <ondown>SetFocus(6000,2)</ondown>
                             <onleft>Close</onleft>
+                            <oninfo>Close</oninfo>
                             <onright>-</onright>
-                            <include>skinvariables-powermainmenu-staticitems</include>
+                            <content>
+                                <include>skinvariables-powermainmenu-staticitems</include>
+                            </content>
                         </include>
 
-                        <include>ButtonMenu_PlayerControls</include>
+                        <include content="List_DialogSelect" condition="!String.IsEmpty(Window(Home).Property(Options.Menu.GUID))">
+                            <param name="id">8000</param>
+                            <param name="itemlayout_include">Layout_MenuList</param>
+                            <top>320</top>
+                            <bottom>80</bottom>
+                            <onup>7020</onup>
+                            <!-- <onup>SetFocus(6000,2)</onup> -->
+                            <ondown>SetFocus(6000,2)</ondown>
+                            <onleft>Close</onleft>
+                            <oninfo>Close</oninfo>
+                            <onright>-</onright>
+                            <content>
+                                <include>skinvariables-homemenu-staticitems</include>
+                            </content>
+                        </include>
+
+                        <control type="group">
+                            <visible>Player.HasMedia</visible>
+                            <include>ButtonMenu_PlayerControls</include>
+                        </control>
+
+                        <control type="group">
+                            <visible>!Player.HasMedia</visible>
+                            <include>ButtonMenu_OptionsTray</include>
+                        </control>
+
                     </include>
                 </include>
 

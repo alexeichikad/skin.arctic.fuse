@@ -399,10 +399,23 @@
         <param name="icon_colordiffuse">panel_fg_70</param>
         <param name="vertical">false</param>
         <param name="grouplist">true</param>
+        <param name="center">false</param>
         <param name="iconoffset_condition">false</param>
         <definition>
 
             <control type="group" id="$PARAM[groupid]">
+                <include content="Object_CenterTop" condition="![$PARAM[vertical]] + $PARAM[center]">
+                    <param name="centertop">50%</param>
+                </include>
+                <include content="Object_Height" condition="![$PARAM[vertical]] + $PARAM[center]">
+                    <param name="height">$PARAM[size]</param>
+                </include>
+                <include content="Object_CenterLeft" condition="[$PARAM[vertical]] + $PARAM[center]">
+                    <param name="centerleft">50%</param>
+                </include>
+                <include content="Object_Width" condition="[$PARAM[vertical]] + $PARAM[center]">
+                    <param name="width">$PARAM[size]</param>
+                </include>
                 <animation effect="fade" start="100" end="30" condition="!Control.IsEnabled($PARAM[id])" reversible="false">Conditional</animation>
                 <include content="Object_Left" condition="!$PARAM[vertical] + $PARAM[grouplist]">
                     <param name="left">-$PARAM[itemgap]</param>
@@ -1404,7 +1417,6 @@
 
     <include name="OSD_VideoSeekBar">
         <control type="group">
-            <visible>!Window.IsVisible(script-wikipedia.xml)</visible>
             <include>OSD_Panel</include>
 
 
@@ -1503,7 +1515,7 @@
                                 <!-- <label>$INFO[MusicPlayer.Title]</label> -->
                                 <label>$INFO[MusicPlayer.Artist]</label>
                                 <textcolor>panel_fg_100</textcolor>
-                                <font>font_info_black_doublerow</font>
+                                <font>font_title_black</font>
                             </control>
                         </control>
                         <control type="label">

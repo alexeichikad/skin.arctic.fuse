@@ -21,6 +21,11 @@
         <value>noop</value>
     </variable>
 
+    <variable name="Path_Search_ReverseInhibit">
+        <value condition="[Window.Previous(Home) + !Skin.HasSetting(Hub.Home.DisableSubmenu)] | [Window.Previous(1101) + !Skin.HasSetting(Hub.1101.DisableSubmenu)] | [Window.Previous(1102) + !Skin.HasSetting(Hub.1102.DisableSubmenu)] | [Window.Previous(1103) + !Skin.HasSetting(Hub.1103.DisableSubmenu)] | [Window.Previous(1104) + !Skin.HasSetting(Hub.1104.DisableSubmenu)] | [Window.Previous(1106) + !Skin.HasSetting(Hub.1106.DisableSubmenu)] | [Window.Previous(1107) + !Skin.HasSetting(Hub.1107.DisableSubmenu)] | [Window.Previous(1108) + !Skin.HasSetting(Hub.1108.DisableSubmenu)] | [Window.Previous(1109) + !Skin.HasSetting(Hub.1109.DisableSubmenu)]">InhibitTransition</value>
+        <value>ReverseTransition</value>
+    </variable>
+
     <variable name="Path_SkinVariables_1304_EditMode">
         <value condition="!String.EndsWith(Container(304).ListItem.Property(menu),-widgetsonly) + !String.EndsWith(Container(304).ListItem.Property(menu),-globalwidgets)">$INFO[Container(304).ListItem.Property(mode),mode=,]</value>
     </variable>
@@ -35,18 +40,31 @@
         <value>skin.arctic.fuse</value>
     </variable>
 
+    <variable name="Path_SkinVariables_SkinUserSlug">
+        <value condition="!String.IsEmpty(Skin.String(SkinVariables.SkinUser))">$INFO[Skin.String(SkinVariables.SkinUser)]</value>
+        <value>defaultuser</value>
+    </variable>
+
     <variable name="Path_Shortcut_UseCategory">
         <value condition="String.StartsWith(Window(Home).Property(Shortcuts.Category),guid-)">&amp;&amp;sidemenu_guid::$INFO[Window(Home).Property(Shortcuts.Category)]</value>
     </variable>
 
     <variable name="Path_Shortcut_UseRawPath">
         <value condition="String.IsEqual(Window(Home).Property(Shortcuts.EditMenu),menu=searchmenu)">&amp;&amp;grouping::grouping://shortcuts/search/&amp;&amp;use_rawpath::True</value>
-        <value condition="$EXP[Exp_Hubs_Shortcuts_IsWidgetMode]">&amp;&amp;use_rawpath::True</value>
+        <value condition="$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">&amp;&amp;use_rawpath::True</value>
     </variable>
 
     <variable name="Path_Shortcut_EditMenu">
         <value condition="!String.IsEmpty(Window(Home).Property(Shortcuts.EditMenu))">$INFO[Window(Home).Property(Shortcuts.EditMenu)]</value>
         <value>menu=sidemenu</value>
+    </variable>
+
+    <variable name="Path_PreSelect_Nav_OnDown">
+        <value condition="Skin.String(Navigation.Global.OnDown,Options)">0</value>
+        <value condition="Skin.String(Navigation.Global.OnDown,Search)">1</value>
+        <value condition="Skin.String(Navigation.Global.OnDown,Explore)">2</value>
+        <value condition="Skin.String(Navigation.Global.OnDown,Filter)">3</value>
+        <value condition="Skin.String(Navigation.Global.OnDown,Bump)">4</value>
     </variable>
 
     <variable name="Path_Shortcut_Hub_Prefix">
@@ -66,8 +84,24 @@
     </variable>
 
     <variable name="Path_SearchFilter_Node">
-        <value condition="[String.IsEqual(Window.Property(SearchDiscover.FilterLabel),Genre) + String.IsEmpty(Window.Property(SearchDiscover.GenreLabel))] | [String.IsEqual(Window.Property(SearchDiscover.FilterLabel),Studio) + String.IsEmpty(Window.Property(SearchDiscover.StudioLabel))] | [String.IsEqual(Window.Property(SearchDiscover.FilterLabel),Director) + String.IsEmpty(Window.Property(SearchDiscover.DirectorLabel))]">plugin://script.skinvariables/?info=get_container_labels&amp;containers=5081&amp;infolabel=$INFO[Window.Property(SearchDiscover.FilterLabel)]&amp;numitems=$INFO[Container(5081).NumItems]</value>
-        <value>plugin://script.skinvariables/?info=get_container_labels&amp;containers=5081&amp;infolabel=$INFO[Window.Property(SearchDiscover.FilterLabel)]&amp;numitems=0</value>
+        <value condition="[String.IsEqual(Window.Property(SearchDiscover.FilterLabel),Genre) + String.IsEmpty(Window.Property(SearchDiscover.GenreLabel))] | [String.IsEqual(Window.Property(SearchDiscover.FilterLabel),Studio) + String.IsEmpty(Window.Property(SearchDiscover.StudioLabel))] | [String.IsEqual(Window.Property(SearchDiscover.FilterLabel),Director) + String.IsEmpty(Window.Property(SearchDiscover.DirectorLabel))]">plugin://script.skinvariables/?info=get_container_labels&amp;containers=52&amp;infolabel=$INFO[Window.Property(SearchDiscover.FilterLabel)]&amp;numitems=$INFO[Container(52).NumItems]</value>
+        <value>plugin://script.skinvariables/?info=get_container_labels&amp;containers=52&amp;infolabel=$INFO[Window.Property(SearchDiscover.FilterLabel)]&amp;numitems=$INFO[Container(52).NumItems]</value>
+    </variable>
+
+    <variable name="Path_Spotlight_Default_ViewContainer">
+        <value condition="!String.IsEmpty(Container(300).ListItem.Property(spotlight_path))">311</value>
+        <value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(303).ListItem.Property(spotlight_path))">311</value>
+        <value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(370).ListItem.Property(spotlight_path))">311</value>
+        <value condition="Window.IsVisible(Home) + !String.IsEmpty(Skin.String(Hub.Home.Spotlight.Path))">311</value>
+        <value condition="Window.IsVisible(1101) + !String.IsEmpty(Skin.String(Hub.1101.Spotlight.Path))">311</value>
+        <value condition="Window.IsVisible(1102) + !String.IsEmpty(Skin.String(Hub.1102.Spotlight.Path))">311</value>
+        <value condition="Window.IsVisible(1103) + !String.IsEmpty(Skin.String(Hub.1103.Spotlight.Path))">311</value>
+        <value condition="Window.IsVisible(1104) + !String.IsEmpty(Skin.String(Hub.1104.Spotlight.Path))">311</value>
+        <value condition="Window.IsVisible(1106) + !String.IsEmpty(Skin.String(Hub.1106.Spotlight.Path))">311</value>
+        <value condition="Window.IsVisible(1107) + !String.IsEmpty(Skin.String(Hub.1107.Spotlight.Path))">311</value>
+        <value condition="Window.IsVisible(1108) + !String.IsEmpty(Skin.String(Hub.1108.Spotlight.Path))">311</value>
+        <value condition="Window.IsVisible(1109) + !String.IsEmpty(Skin.String(Hub.1109.Spotlight.Path))">311</value>
+        <value>300</value>
     </variable>
 
     <variable name="Path_Spotlight_SlideShow_Content">
@@ -80,6 +114,8 @@
         <value condition="Window.IsVisible(1107) + !String.IsEmpty(Skin.String(Hub.1107.Spotlight.Fallback))">$INFO[Skin.String(Hub.1107.Spotlight.Fallback)]</value>
         <value condition="Window.IsVisible(1108) + !String.IsEmpty(Skin.String(Hub.1108.Spotlight.Fallback))">$INFO[Skin.String(Hub.1108.Spotlight.Fallback)]</value>
         <value condition="Window.IsVisible(1109) + !String.IsEmpty(Skin.String(Hub.1109.Spotlight.Fallback))">$INFO[Skin.String(Hub.1109.Spotlight.Fallback)]</value>
+        <value condition="!String.IsEmpty(Weather.FanartCode) + Weather.IsFetched">resource://resource.images.weatherfanart.multi/$INFO[Weather.FanartCode]/</value>
+        <value>$VAR[Image_StartUp]</value>
     </variable>
 
     <variable name="Path_Spotlight_Fallback_Content">
@@ -160,28 +196,28 @@
     </variable>
 
     <variable name="Path_DiscoverWidgets_SortBy">
-        <value condition="Skin.HasSetting(Search.LibraryDiscover) + !String.IsEmpty(Window.Property(SearchDiscover.SortBy))">$INFO[Window.Property(SearchDiscover.SortBy)]</value>
-        <value condition="Skin.HasSetting(Search.LibraryDiscover)">title</value>
+        <value condition="String.IsEmpty(Container(5099).ListItem.Property(discover)) + !String.IsEmpty(Window.Property(SearchDiscover.SortBy))">$INFO[Window.Property(SearchDiscover.SortBy)]</value>
+        <value condition="String.IsEmpty(Container(5099).ListItem.Property(discover))">title</value>
     </variable>
     <variable name="Path_DiscoverWidgets_SortOrder">
-        <value condition="Skin.HasSetting(Search.LibraryDiscover)">$INFO[Window.Property(SearchDiscover.SortOrder)]</value>
+        <value condition="String.IsEmpty(Container(5099).ListItem.Property(discover))">$INFO[Window.Property(SearchDiscover.SortOrder)]</value>
     </variable>
     <variable name="Path_DiscoverWidgets_ItemLimit">
-        <value condition="Skin.HasSetting(Search.LibraryDiscover)">$INFO[Skin.String(SearchDiscover.ItemLimit)]</value>
+        <value condition="String.IsEmpty(Container(5099).ListItem.Property(discover))">$INFO[Skin.String(SearchDiscover.ItemLimit)]</value>
     </variable>
 
     <variable name="Path_DiscoverWidgets_Join">
-        <value condition="!Skin.HasSetting(Search.LibraryDiscover)">plugin://script.skinvariables/?info=get_filter_dir&amp;library=video$VAR[Path_DiscoverWidgets_JoinSort,&amp;sort_by=,&amp;sort_how=desc]</value>
+        <value condition="!String.IsEmpty(Container(5099).ListItem.Property(discover))">plugin://script.skinvariables/?info=get_filter_dir&amp;library=video$VAR[Path_DiscoverWidgets_JoinSort,&amp;sort_by=,&amp;sort_how=desc]</value>
         <value>plugin://script.skinvariables/?info=get_filter_dir&amp;library=video$INFO[Control.GetLabel(9099).index(1),&amp;filter_key__title=title&amp;filter_value__title=,]$INFO[Window.Property(SearchDiscover.GenreLabel),&amp;filter_key__genre=genre&amp;filter_value__genre=,]$INFO[Window.Property(SearchDiscover.StudioLabel),&amp;filter_key__studio=studio&amp;filter_value__studio=,]$INFO[Window.Property(SearchDiscover.DirectorLabel),&amp;filter_key__director=director&amp;filter_value__director=,]$INFO[Window.Property(SearchDiscover.WriterLabel),&amp;filter_key__writer=writer&amp;filter_value__writer=,]$INFO[Window.Property(SearchDiscover.CountryLabel),&amp;filter_key__country=country&amp;filter_value__country=,]$INFO[Window.Property(SearchDiscover.YearLow),&amp;filter_key__yearlow=year&amp;filter_operator__yearlow=ge&amp;filter_value__yearlow=,]$INFO[Window.Property(SearchDiscover.YearHigh),&amp;filter_key__yearhigh=year&amp;filter_operator__yearhigh=le&amp;filter_value__yearhigh=,]$INFO[Window.Property(SearchDiscover.RatingLow),&amp;filter_key__ratinglow=rating&amp;filter_operator__ratinglow=ge&amp;filter_value__ratinglow=,]$INFO[Window.Property(SearchDiscover.RatingHigh),&amp;filter_key__ratinghigh=rating&amp;filter_operator__ratinghigh=le&amp;filter_value__ratinghigh=,]</value>
     </variable>
 
     <variable name="Path_DiscoverWidgets_Film">
-        <value condition="!Skin.HasSetting(Search.LibraryDiscover)">$VAR[Path_DiscoverWidgets_Base,,&amp;tmdb_type=movie&amp;length=2]$VAR[Path_DiscoverWidgets_FilmSort,&amp;sort_by=,]$VAR[Path_DiscoverWidgets_YearLow,&amp;primary_release_date.gte=,]$VAR[Path_DiscoverWidgets_YearHigh,&amp;primary_release_date.lte=,]$INFO[Window.Property(SearchDiscover.FilmGenreID),&amp;with_genres=,]</value>
+        <value condition="!String.IsEmpty(Container(5099).ListItem.Property(discover))">$VAR[Path_DiscoverWidgets_Base,,&amp;tmdb_type=movie&amp;length=2]$VAR[Path_DiscoverWidgets_FilmSort,&amp;sort_by=,]$VAR[Path_DiscoverWidgets_YearLow,&amp;primary_release_date.gte=,]$VAR[Path_DiscoverWidgets_YearHigh,&amp;primary_release_date.lte=,]$INFO[Window.Property(SearchDiscover.FilmGenreID),&amp;with_genres=,]</value>
         <value>videodb://movies/titles</value>
     </variable>
 
     <variable name="Path_DiscoverWidgets_Show">
-        <value condition="!Skin.HasSetting(Search.LibraryDiscover) + String.IsEmpty(Window.Property(SearchDiscover.CastID)) + String.IsEmpty(Window.Property(SearchDiscover.CrewID))">$VAR[Path_DiscoverWidgets_Base,,&amp;tmdb_type=tv&amp;length=2]$VAR[Path_DiscoverWidgets_ShowSort,&amp;sort_by=,]$VAR[Path_DiscoverWidgets_YearLow,&amp;first_air_date.gte=,]$VAR[Path_DiscoverWidgets_YearHigh,&amp;first_air_date.lte=,]$INFO[Window.Property(SearchDiscover.ShowGenreID),&amp;with_genres=,]</value>
+        <value condition="!String.IsEmpty(Container(5099).ListItem.Property(discover)) + String.IsEmpty(Window.Property(SearchDiscover.CastID)) + String.IsEmpty(Window.Property(SearchDiscover.CrewID))">$VAR[Path_DiscoverWidgets_Base,,&amp;tmdb_type=tv&amp;length=2]$VAR[Path_DiscoverWidgets_ShowSort,&amp;sort_by=,]$VAR[Path_DiscoverWidgets_YearLow,&amp;first_air_date.gte=,]$VAR[Path_DiscoverWidgets_YearHigh,&amp;first_air_date.lte=,]$INFO[Window.Property(SearchDiscover.ShowGenreID),&amp;with_genres=,]</value>
         <value>videodb://tvshows/titles</value>
     </variable>
 
@@ -196,10 +232,11 @@
     </variable>
 
     <variable name="Path_SearchTerm">
-        <value condition="Control.HasFocus(9099)">$INFO[Control.GetLabel(9099).index(1)]</value>
+        <!-- <value condition="Control.HasFocus(9099)">$INFO[Control.GetLabel(9099).index(1)]</value>
         <value condition="!String.IsEmpty(Window.Property(SearchTerm))">$INFO[Window.Property(SearchTerm)]</value>
+        <value condition="!String.IsEmpty(Control.GetLabel(9099).index(1))">$INFO[Control.GetLabel(9099).index(1)]</value> -->
+        <!-- <value>•••</value> -->
         <value condition="!String.IsEmpty(Control.GetLabel(9099).index(1))">$INFO[Control.GetLabel(9099).index(1)]</value>
-        <value>•••</value>
     </variable>
 
     <variable name="Path_Search_Filter">

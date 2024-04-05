@@ -1755,16 +1755,51 @@ msgctxt "#31369"
 msgid "Video file"
 msgstr ""
 
+#: /1080i/Custom_1172_Dialog_SideMenu.xml
+msgctxt "#31370"
+msgid "Switch profile"
+msgstr ""
+
 msgctxt "#31371"
 msgid "Sorted by"
+msgstr ""
+
+#: /1080i/Includes_Items.xml
+msgctxt "#31372"
+msgid "Options tray"
+msgstr ""
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31373"
+msgid "Stacked"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31374"
+msgid "Reset skin settings to defaults"
 msgstr ""
 
 msgctxt "#31375"
 msgid "Install zip"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31376"
+msgid "Reset discover search history"
+msgstr ""
+
+#: /1080i/Includes_Shortcuts_Window.xml
+msgctxt "#31377"
+msgid "Next window"
+msgstr ""
+
 msgctxt "#31378"
 msgid "Foreign"
+msgstr ""
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31379"
+msgid "Edit categories"
 msgstr ""
 
 msgctxt "#31380"
@@ -1783,6 +1818,36 @@ msgctxt "#31383"
 msgid "Production"
 msgstr ""
 
+#: /1080i/SkinSettings.xml
+msgctxt "#31384"
+msgid "Tray labels"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31385"
+msgid "Secondary"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31386"
+msgid "Primary"
+msgstr ""
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31387"
+msgid "Contextual"
+msgstr ""
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31388"
+msgid "Seed"
+msgstr ""
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31389"
+msgid "Parent widget"
+msgstr ""
+
 msgctxt "#31390"
 msgid "Release Year"
 msgstr ""
@@ -1790,6 +1855,11 @@ msgstr ""
 #: /1080i/Includes_Labels.xml
 msgctxt "#31391"
 msgid "Minimal"
+msgstr ""
+
+#: /1080i/Includes_Labels.xml
+msgctxt "#31392"
+msgid "Explore Widgets"
 msgstr ""
 
 #: /1080i/SkinSettings.xml

@@ -25,13 +25,12 @@
         <font>
             <name>font_info_black</name>
             <filename>RobotoCondensed-Black.ttf</filename>
-            <size>112</size>
+            <size>128</size>
         </font>
         <font>
-            <name>font_info_black_doublerow</name>
+            <name>font_title_black</name>
             <filename>RobotoCondensed-Black.ttf</filename>
             <size>74</size>
-            <linespacing>0.8</linespacing>
         </font>
 
         <!-- Black Fonts -->
@@ -187,6 +186,12 @@
             <size>22</size>
             <style>uppercase</style>
         </font>
+        <font>
+            <name>font_infotag</name>
+            <filename>LeagueSpartan-SemiBold.ttf</filename>
+            <size>22</size>
+            <style>uppercase</style>
+        </font>
 
         <!-- Music visualisation scrolling text -->
         <font>
@@ -224,7 +229,7 @@
         <font>
             <name>font_logo</name>
             <filename>Questrial-Regular.ttf</filename>
-            <size>27</size>
+            <size>30</size>
         </font>
         <font>
             <name>font_logo_large</name>
@@ -259,13 +264,12 @@
         <font>
             <name>font_info_black</name>
             <filename>RobotoNotoCondensed-Black.ttf</filename>
-            <size>112</size>
+            <size>128</size>
         </font>
         <font>
-            <name>font_info_black_doublerow</name>
+            <name>font_title_black</name>
             <filename>RobotoNotoCondensed-Black.ttf</filename>
             <size>74</size>
-            <linespacing>0.8</linespacing>
         </font>
 
         <!-- Black Fonts -->
@@ -421,6 +425,12 @@
             <size>22</size>
             <style>uppercase</style>
         </font>
+        <font>
+            <name>font_infotag</name>
+            <filename>LeagueSpartan-SemiBold.ttf</filename>
+            <size>22</size>
+            <style>uppercase</style>
+        </font>
 
         <!-- Music visualisation scrolling text -->
         <font>
@@ -458,7 +468,7 @@
         <font>
             <name>font_logo</name>
             <filename>Questrial-Regular.ttf</filename>
-            <size>27</size>
+            <size>30</size>
         </font>
         <font>
             <name>font_logo_large</name>
@@ -494,14 +504,13 @@
             <name>font_info_black</name>
             <filename>resource://resource.font.robotocjksc/RobotoCJKSC-Bold.ttf</filename>
             <aspect>0.89</aspect>
-            <size>112</size>
+            <size>128</size>
         </font>
         <font>
-            <name>font_info_black_doublerow</name>
+            <name>font_title_black</name>
             <filename>resource://resource.font.robotocjksc/RobotoCJKSC-Bold.ttf</filename>
             <aspect>0.89</aspect>
             <size>74</size>
-            <linespacing>0.8</linespacing>
         </font>
 
         <!-- Black Fonts -->
@@ -682,6 +691,12 @@
             <size>22</size>
             <style>uppercase</style>
         </font>
+        <font>
+            <name>font_infotag</name>
+            <filename>LeagueSpartan-SemiBold.ttf</filename>
+            <size>22</size>
+            <style>uppercase</style>
+        </font>
 
         <!-- Music visualisation scrolling text -->
         <font>
@@ -722,7 +737,7 @@
         <font>
             <name>font_logo</name>
             <filename>Questrial-Regular.ttf</filename>
-            <size>27</size>
+            <size>30</size>
         </font>
         <font>
             <name>font_logo_large</name>

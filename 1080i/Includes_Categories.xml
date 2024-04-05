@@ -4,20 +4,9 @@
         <animation effect="fade" start="100" end="0" delay="100" time="300" tween="quadratic" reversible="false" condition="!Container($PARAM[id]).OnNext">Conditional</animation>
     </include>
 
-    <include name="Categories_Selector_Movement_First">
+    <include name="Categories_Selector_Movement_Position">
         <focusposition>0</focusposition>
         <movement>3</movement>
-    </include>
-    <include name="Categories_Selector_Movement_Second">
-        <focusposition>1</focusposition>
-        <movement>2</movement>
-        <animation effect="slide" end="-240" condition="Integer.IsLess(Container($PARAM[id]).NumItems,3)">Conditional</animation>
-    </include>
-    <include name="Categories_Selector_Movement_Position">
-        <include condition="!Skin.HasSetting(Categories.UseSecondPositionFocus)">Categories_Selector_Movement_First</include>
-        <include condition="Skin.HasSetting(Categories.UseSecondPositionFocus)" content="Categories_Selector_Movement_Second">
-            <param name="id">$PARAM[id]</param>
-        </include>
     </include>
 
     <include name="Categories_Selector_Movement_Submenu">
@@ -41,7 +30,6 @@
         <param name="color_fo">main_fg_100</param>
         <param name="color_nf">main_fg_30</param>
         <param name="hidden_button">List_ButtonMenu_Row_HiddenButton_Home</param>
-        <param name="visible">Integer.IsEqual(Window.Property(TMDBHelper.WidgetContainer),301)</param>
         <param name="shorten">False</param>
         <param name="preitem_fade">True</param>
         <param name="hitrect_x">0</param>
@@ -74,16 +62,8 @@
                     <param name="id">$PARAM[id]</param>
                 </include>
 
-                <onfocus condition="$PARAM[slide]">SetProperty(Slide.WidgetContainer,True,$PARAM[window_id])</onfocus>
+                <onfocus condition="$PARAM[slide]">SetProperty(Slide.WidgetContainer,$PARAM[id],$PARAM[window_id])</onfocus>
                 <onfocus condition="![$PARAM[slide]]">ClearProperty(Slide.WidgetContainer,$PARAM[window_id])</onfocus>
-
-                <include content="Animation_Fade_In">
-                    <param name="condition">$PARAM[visible]</param>
-                    <param name="delay">200</param>
-                </include>
-                <include content="Animation_ConditionalFade">
-                    <param name="condition">!$PARAM[visible]</param>
-                </include>
 
                 <left>160</left>
                 <height>hub_categorieswidget_h</height>

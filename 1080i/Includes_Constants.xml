@@ -66,10 +66,10 @@
     <constant name="-view_icon_item_w">-170</constant>
     <constant name="view_icon_itemlayout_w">210</constant>
     <constant name="-view_icon_itemlayout_w">-210</constant>
-    <constant name="view_icon_item_h">174</constant>
-    <constant name="-view_icon_item_h">-174</constant>
-    <constant name="view_icon_itemlayout_h">214</constant>
-    <constant name="-view_icon_itemlayout_h">-214</constant>
+    <constant name="view_icon_item_h">214</constant>
+    <constant name="-view_icon_item_h">-214</constant>
+    <constant name="view_icon_itemlayout_h">254</constant>
+    <constant name="-view_icon_itemlayout_h">-254</constant>
     <constant name="view_icon_movement">7</constant>
 
     <!-- View ItemLayouts -->
@@ -124,8 +124,7 @@
     <constant name="-view_button_offset_x">-40</constant>
     <constant name="view_button_left">-80</constant>
 
-    <constant name="view_apps_item_h">112</constant>
-    <constant name="-view_apps_item_h">-112</constant>
+    <constant name="view_apps_movement">5</constant>
 
     <constant name="view_weatherforecast_itemlayout_w">280</constant>
     <constant name="-view_weatherforecast_itemlayout_w">-280</constant>
@@ -161,6 +160,7 @@
     <constant name="-info_plot_person_h">-441</constant>
     <constant name="info_plot_person_h">441</constant>
     <constant name="info_tag_offset_y">-5</constant>
+    <constant name="info_tag_light_offset_y">-3.5</constant>
 
     <!-- Context Menu -->
     <constant name="context_icon_w">515.2</constant>
@@ -170,27 +170,20 @@
     <constant name="context_slide_sq">102.4</constant>
 
     <!-- Widgets -->
-    <constant name="hub_spotlight_t">420</constant>
+    <constant name="hub_spotlight_t">400</constant>
     <constant name="hub_spotlight_h">40</constant>
-    <constant name="hub_spotlight_s">0</constant>
-    <constant name="hub_categorieswidget_t">680</constant>
+    <constant name="hub_categorieswidget_t">640</constant>
     <constant name="hub_categorieswidget_h">320</constant>
-    <constant name="hub_categorieswidget_s">0</constant>
-    <constant name="hub_submenuwidget_t">740</constant>
+    <constant name="hub_submenuwidget_t">700</constant>
     <constant name="hub_submenuwidget_h">240</constant>
-    <constant name="hub_submenuwidget_s">0</constant>
 
-    <!-- <constant name="hub_group_widgetup_s">-300</constant>
-    <constant name="hub_group_nospotlight_s">-300</constant> -->
     <constant name="hub_group_widgetup_s">-360</constant>
     <constant name="hub_group_nospotlight_s">-360</constant>
+    <constant name="hub_group_fanartspotlight_s">280</constant>
+    <constant name="-hub_group_fanartspotlight_s">-280</constant>
 
     <constant name="hub_widgets_grouplist_t">860</constant>
     <constant name="hub_widgets_grouplist_b">-360</constant>
-
-    <!-- <constant name="hub_widgets_nosubmenu_s">-60</constant>
-    <constant name="hub_widgets_nocategories_s">-60</constant> -->
-
 
     <constant name="widget_tbump_h">140</constant>  <!-- Bumper to address label top spacing -->
     <constant name="widget_label_t">-140</constant>  <!-- Space from widget bottom to next widget label -->

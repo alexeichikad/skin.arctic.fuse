@@ -603,7 +603,6 @@
         <param name="diffuse">diffuse/circle_50.png</param>
         <definition>
             <control type="image">
-                <nested />
                 <centertop>50%</centertop>
                 <height>50</height>
                 <width>50</width>
@@ -652,7 +651,7 @@
                     <control type="image">
                         <include content="Dimension_Padding"><param name="pad">-40</param></include>
                         <bordersize>40</bordersize>
-                        <bordertexture colordiffuse="shadow_hard">shadows/circle_50-shadow-40.png</bordertexture>
+                        <bordertexture colordiffuse="shadow_soft">shadows/circle_50-shadow-40.png</bordertexture>
                         <texture colordiffuse="main_fg_100">diffuse/circle_50.png</texture>
                     </control>
                     <include content="Object_InfoCircle_Image">

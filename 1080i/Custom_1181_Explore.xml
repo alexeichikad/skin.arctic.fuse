@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="window" id="1181">
-    <defaultcontrol>5000</defaultcontrol>
+    <defaultcontrol always="true">5000</defaultcontrol>
     <include>Action_PreserveTransitionProp_Onload</include>
+    <onload>SetFocus($VAR[Action_Recommendations_SetFocusID])</onload>
     <controls>
         <include>DialogInfo_Recommendations_BackgroundLoader</include>
         <include>Background_Main</include>
@@ -12,14 +13,6 @@
                 <include>Animation_Transition_InfoPanel_Hide</include>
             </include>
             <include content="DialogInfo_Recommendations_Widgets_Grouplist">
-                <!-- <control type="button" id="5098">
-                    <height>0</height>
-                    <texturefocus />
-                    <texturenofocus />
-                    <onfocus>Action(Down)</onfocus>
-                    <animation effect="fade" time="400" start="0" end="0">Focus</animation>
-                    <visible>!ControlGroup(5000).HasFocus() | Control.HasFocus(5098)</visible>
-                </control> -->
                 <include content="DialogInfo_Recommendations_Widgets" condition="![Window.Previous(music) | Window.Previous(1103)]">
                     <param name="include_onclick">false</param>
                     <param name="transition_include">true</param>
@@ -32,6 +25,7 @@
                     <param name="transition_include">true</param>
                     <param name="transition_hidden">Control.HasFocus(5004)</param>
                     <param name="visible">!Control.IsVisible(5001) + !Control.IsVisible(5002) + !Control.IsVisible(5003) + Library.HasContent(Movies)</param>
+                    <param name="widgetfade_include">true</param>
                     <content target="videos">special://skin/extras/playlists/RandomMovies.xsp</content>
                 </include>
                 <include content="Widget_Info_Row" condition="![Window.Previous(music) | Window.Previous(1103)]">
@@ -41,6 +35,7 @@
                     <param name="transition_include">true</param>
                     <param name="transition_hidden">Control.HasFocus(5005)</param>
                     <param name="visible">!Control.IsVisible(5001) + !Control.IsVisible(5002) + !Control.IsVisible(5003) + Library.HasContent(TVShows)</param>
+                    <param name="widgetfade_include">true</param>
                     <content target="videos">special://skin/extras/playlists/RandomTvShows.xsp</content>
                 </include>
                 <include content="Widget_Info_Row" condition="![Window.Previous(music) | Window.Previous(1103)]">
@@ -50,6 +45,7 @@
                     <param name="transition_include">true</param>
                     <param name="transition_hidden">Control.HasFocus(5006)</param>
                     <param name="visible">!Control.IsVisible(5001) + !Control.IsVisible(5002) + !Control.IsVisible(5003) + !Library.HasContent(Movies)</param>
+                    <param name="widgetfade_include">true</param>
                     <content target="videos">plugin://plugin.video.themoviedb.helper/?info=trakt_trending&amp;tmdb_type=movie$VAR[Path_Param_Widget]</content>
                 </include>
                 <include content="Widget_Info_Row" condition="![Window.Previous(music) | Window.Previous(1103)]">
@@ -59,6 +55,7 @@
                     <param name="transition_include">true</param>
                     <param name="transition_hidden">Control.HasFocus(5007)</param>
                     <param name="visible">!Control.IsVisible(5001) + !Control.IsVisible(5002) + !Control.IsVisible(5003) + !Library.HasContent(TVShows)</param>
+                    <param name="widgetfade_include">true</param>
                     <content target="videos">plugin://plugin.video.themoviedb.helper/?info=trakt_trending&amp;tmdb_type=tv$VAR[Path_Param_Widget]</content>
                 </include>
 
@@ -69,6 +66,7 @@
                     <param name="transition_include">true</param>
                     <param name="transition_hidden">Control.HasFocus(5008)</param>
                     <param name="visible">True</param>
+                    <param name="widgetfade_include">true</param>
                     <content target="music">library://music/top100/top100albums.xml/</content>
                 </include>
                 <include content="Widget_Info_Row" condition="[Window.Previous(music) | Window.Previous(1103)]">
@@ -78,6 +76,7 @@
                     <param name="transition_include">true</param>
                     <param name="transition_hidden">Control.HasFocus(5009)</param>
                     <param name="visible">True</param>
+                    <param name="widgetfade_include">true</param>
                     <content target="music">library://music/recentlyplayedalbums.xml/</content>
                 </include>
                 <include content="Widget_Info_Row" condition="[Window.Previous(music) | Window.Previous(1103)]">
@@ -87,20 +86,21 @@
                     <param name="transition_include">true</param>
                     <param name="transition_hidden">Control.HasFocus(5010)</param>
                     <param name="visible">True</param>
+                    <param name="widgetfade_include">true</param>
                     <content target="music">special://skin/extras/playlists/RandomArtists.xsp</content>
                 </include>
                 <control type="group" id="5099">
                     <height>0</height>
-                    <!-- <control type="group">
+                    <control type="group">
                         <visible>!Integer.IsEqual(Container(5000).NumItems,0)</visible>
                         <visible>!Integer.IsEqual(Container(5000).NumItems,1) | !Control.HasFocus(5098) | ControlGroup(5000).HasFocus()</visible>
                         <visible>!$EXP[Exp_InfoDialogs]</visible>
                         <include content="Furniture_Bottom_WidgetGroups">
-                            <param name="label">$LOCALIZE[31342]</param>
+                            <param name="label">$VAR[Label_NextBump]</param>
+                            <param name="icon">special://skin/extras/icons/kodi.png</param>
                         </include>
-                    </control> -->
+                    </control>
                 </control>
-
             </include>
             <include>Widget_Transitions</include>
         </include>
@@ -108,6 +108,6 @@
             <visible>!$EXP[Exp_InfoDialogs]</visible>
             <include>DialogInfo_Recommendations_Furniture</include>
         </control>
-        <include>TouchMode_Recs_Zones</include>
+
     </controls>
 </window>

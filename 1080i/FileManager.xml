@@ -4,6 +4,7 @@
     <include>Action_Blur_Onload</include>
     <include>Action_BlurImage_SimpleBackground_Onload</include>
     <controls>
+        <include>Defs_TMDbHelper_Loader</include>
         <include content="Background_Main">
             <param name="plain_background">true</param>
         </include>
@@ -46,11 +47,20 @@
                             <onright>21</onright>
                         </control>
                     </include>
+                    <control type="group">
+                        <bottom>0</bottom>
+                        <left>0</left>
+                        <height>80</height>
+                        <include>Settings_KodiVersion</include>
+                    </control>
                     <include content="Settings_InfoText">
                         <param name="id">9930</param>
                         <param name="heading">$INFO[Control.GetLabel(12)]</param>
                         <param name="override">true</param>
                         <param name="label">$INFO[Control.GetLabel(101)]</param>
+                        <param name="align">right</param>
+                        <right>40</right>
+                        <left>360</left>
                     </include>
 
                 </include>
